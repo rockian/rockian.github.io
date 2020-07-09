@@ -1,0 +1,35 @@
+body {
+    background-image: url('https://rockian.github.io/images/silverware.jpg');
+    color: #404040;
+    font-size: 11pt;
+    font-family: 'Georgia', 'Garamond', serif;
+}
+
+a:link {
+    color: #A4A400;
+}
+
+.heading {
+    background-color: #F0F0F0;
+    color: #A4A400;
+    font-family: 'Lucida Sans Unicode', 'Helvetica', 'Aria', 'sans-serif';
+    text-decoration: underline;
+    text-align: left;
+    font-size: 18pt;
+    font-weight: normal;
+}
+
+#title {
+    text-align: center;
+    font-size: 22pt;
+    font-weight: bold;
+}
+
+blockquote {
+    background-color: #FFFFA8;
+    font-style: italic;
+}
+
+ul {
+    list-style: url('https://rockian.github.io/images/pie_icon.gif');
+}
