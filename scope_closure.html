@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Scope and Closure</title>
+    <script src="scope_closure.js"></script>
+</head>
+
+<body>
+    <button onclick="doFilter()">Filter</button>
+    <p id="filter"></p>
+
+    <button onclick="sort()">BubbleSort</button>
+    <p id="sort"></p>
+
+    <script>
+        String.prototype.filter = function(w) {
+            return Object.values(this.split(' ')).filter(s => s !== w).join(' ');
+        }
+
+        function doFilter() {
+            document.getElementById("filter").innerHTML = "This house is not nice!".filter("not");
+        }
+
+        function sort() {
+            document.getElementById("sort").innerHTML = [6, 4, 0, 3, -2, 1].bubbleSort();
+        }
+
+        Array.prototype.bubbleSort = function() {
+            var swapp;
+            var n = this.length - 1;
+            var x = this;
+            do {
+                swapp = false;
+                for (var i = 0; i < n; i++) {
+                    if (x[i] > x[i + 1]) {
+                        var temp = x[i];
+                        x[i] = x[i + 1];
+                        x[i + 1] = temp;
+                        swapp = true;
+                    }
+                }
+                n--;
+            } while (swapp);
+            return x;
+        }
+    </script>
+</body>
+
+
+</html>
