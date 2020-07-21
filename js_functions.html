@@ -4,25 +4,112 @@
 
 <head>
     <title>Javascript Basics</title>
-    <script>
-        function max(n1, n2) {
-            if (n1 > n2) {
-                return n1;
-            } else {
-                return n2;
-            }
-        }
-    </script>
-
+    <script src="https://rockian.github.io/js_functions.js"></script>
 </head>
 
 <body>
-    <h1>Max():</h1>
-    <p>
-        function max(n1, n2) { <br> &nbsp;if (n1 &gt; n2) { <br> &nbsp;&nbsp;return n1; <br> &nbsp;} else { <br> &nbsp;&nbsp;return n2;<br> &nbsp;} <br>}
-    </p>
-    number 1: <input type="text" id="n1"> &nbsp; &nbsp; number 2: <input type="text" id="n2"> &nbsp; &nbsp;
-    <input type="button" value="find max" onclick="max()"> result: <span id="max"></span>
+    <h3>Question 1: Max </h3>
+    <p>Define a function max() that takes two numbers as arguments and returns the largest of them</p>
+    <div><input type="button" value="Max()" onclick="showMax()"> </div>
+
+    <h3>Question 2: Max of Three</h3>
+    <p>Define a function maxOfThree() that takes three numbers as arguments and returns the largest of them</p>
+    <div><input type="button" value="maxOfThree()" onclick="showMaxOfThree()"> </div>
+
+    <h3>Question 3: Is Vowel</h3>
+    <p>Write a function isVowel() that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.</p>
+    <div><input type="button" value="isVowel()" onclick="showIsVowel()"> </div>
+
+    <h3>Question 4: Sum and Multiply</h3>
+    <p>Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers in an array of numbers. For example, sum([1,2,3,4]) should return 10, and multiply([1,2,3,4]) should return 24.</p>
+    <div><input type="button" value="Sum()" onclick="showSum()"> <input type="button" value="Multiply()" onclick="showMultiply()"></div>
+
+    <h3>Question 5: Reverse</h3>
+    <p>Define a function reverse() that computes the reversal of a string. For example, reverse("jag testar") should return the string "ratset gaj"</p>
+    <div><input type="button" value="Reverse()" onclick="showReverse()"> </div>
+
+    <h3>Question 6: Find The Longest Word</h3>
+    <p>Write a function findLongestWord() that takes an array of words and returns the length of the longest one.m</p>
+    <div><input type="button" value="findLongestWord()" onclick="showFindLongestWord()"> </div>
+
+    <h3>Question 7: filter Long Words</h3>
+    <p>Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.</p>
+    <div><input type="button" value="filterLongWords()" onclick="showFilterLongWords()"> </div>
+
+    <h3>Question 8: Modify JsFiddle</h3>
+    <p>Modify the jsfiddle on the map/filter/reduce slide as follows: <br>a) multiply each element by 10; <br>b) return array with all elements equal to 3; <br>c) return the product of all elements;</p>
+    <div><input type="button" value="ViewResult()" onclick="jsFiddle()"> </div>
+
+
+
+    <script>
+        function showMax() {
+            console.log("****************************************************");
+            console.log("Expected output of max(20, 10) is 20 and " +
+                myTestFunction(20, max(20, 10)));
+            console.log("*****************************************************");
+        }
+
+        function showMaxOfThree() {
+            console.log("****************************************************");
+            console.log("Expected output of maxOfThree(20, 100, 50) is 100 and " +
+                myTestFunction(100, maxOfThree(20, 100, 50)));
+            console.log("*****************************************************");
+        }
+
+        function showIsVowel() {
+            console.log("****************************************************");
+            console.log("Expected output of isVowel('i') is true and " +
+                myTestFunction(true, isVowel('i')));
+            console.log("*****************************************************");
+        }
+
+        function showSum() {
+            console.log("****************************************************");
+            console.log("Expected output of sum([1,2,3,4]) is 10 and " +
+                myTestFunction(10, sum([1, 2, 3, 4])));
+            console.log("*****************************************************");
+        }
+
+        function showMultiply() {
+            console.log("****************************************************");
+            console.log("Expected output of multiply([1,2,3,4]) is 24 and " +
+                myTestFunction(24, multiply([1, 2, 3, 4])));
+            console.log("*****************************************************");
+        }
+
+        function showReverse() {
+            console.log("****************************************************");
+            console.log("Expected output of reverse('jag testar') is ratset gaj and " +
+                myTestFunction('ratset gaj', reverse('jag testar')));
+            console.log("*****************************************************");
+        }
+
+        function showFindLongestWord() {
+            console.log("****************************************************");
+            console.log("Expected output of findLongestWord(['Apple', 'Pineapple', 'Mango', 'Banana']) is 9 " +
+                myTestFunction(9, findLongestWord(['Apple', 'Pineapple', 'Mango', 'Banana'])));
+            console.log("*****************************************************");
+        }
+
+        function showFilterLongWords() {
+            console.log("****************************************************");
+            console.log("Expected output of filterLongWords(['Apple', 'Pineapple', 'Mango', 'Banana'], 6) is ['Pineapple', 'Banana'] " +
+                myTestFunction(['Banana', 'Pineapple'], filterLongWords(['Apple', 'Pineapple', 'Mango', 'Banana'], 6)));
+            console.log("*****************************************************");
+        }
+
+
+
+        function myTestFunction(input, output) {
+            console.assert(JSON.stringify(input) === JSON.stringify(output), "TEST FAILED");
+            if (JSON.stringify(input) === JSON.stringify(output)) {
+                return "TEST SUCCEEDED";
+            } else {
+                return "TEST FAILED";
+            }
+        }
+    </script>
 </body>
 
 </html>
