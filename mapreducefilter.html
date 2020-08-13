@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Map Reduce Filter</title>
+
+    <script>
+        function sum(a) {
+            return a.reduce(function(prev, e, i, arr) {
+                return prev + e;
+            });
+        }
+
+        function multiply(a) {
+            return a.reduce(function(prev, e, i, arr) {
+                return prev * e;
+            });
+        }
+
+        function reverse(a) {
+            return a.split("").reverse().join("");
+        }
+
+        function filterLongWords(a, j) {
+            return a.filter(function(e, i, arr) {
+                return e.length >= j;
+            });
+        }
+    </script>
+</head>
+
+<body>
+
+    <h3>Question 4: Sum and Multiply</h3>
+    <p>Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers in an array of numbers. For example, sum([1,2,3,4]) should return 10, and multiply([1,2,3,4]) should return 24.</p>
+    <div><input type="button" value="Sum()" onclick="showSum()"> <input type="button" value="Multiply()" onclick="showMultiply()"></div>
+
+    <h3>Question 5: Reverse</h3>
+    <p>Define a function reverse() that computes the reversal of a string. For example, reverse("jag testar") should return the string "ratset gaj"</p>
+    <div><input type="button" value="Reverse()" onclick="showReverse()"> </div>
+
+    <h3>Question 7: filter Long Words</h3>
+    <p>Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.</p>
+    <div><input type="button" value="filterLongWords()" onclick="showFilterLongWords()"> </div>
+
+    <script>
+        function showSum() {
+            console.log("****************************************************");
+            console.log("Expected output of sum([1,2,3,4]) is 10 and " +
+                myTestFunction(10, sum([1, 2, 3, 4])));
+            console.log("*****************************************************");
+        }
+
+        function showMultiply() {
+            console.log("****************************************************");
+            console.log("Expected output of multiply([1,2,3,4]) is 24 and " +
+                myTestFunction(24, multiply([1, 2, 3, 4])));
+            console.log("*****************************************************");
+        }
+
+        function showReverse() {
+            console.log("****************************************************");
+            console.log("Expected output of reverse('jag testar') is ratset gaj and " +
+                myTestFunction('ratset gaj', reverse('jag testar')));
+            console.log("*****************************************************");
+        }
+
+        function showFilterLongWords() {
+            console.log("****************************************************");
+            console.log("Expected output of filterLongWords(['Apple', 'Pineapple', 'Mango', 'Banana'], 6) is ['Pineapple', 'Banana'] " +
+                myTestFunction(['Pineapple', 'Banana'], filterLongWords(['Apple', 'Pineapple', 'Mango', 'Banana'], 6)));
+            console.log("*****************************************************");
+        }
+
+
+
+        function myTestFunction(input, output) {
+            console.assert(JSON.stringify(input) === JSON.stringify(output), "TEST FAILED");
+            if (JSON.stringify(input) === JSON.stringify(output)) {
+                return "TEST SUCCEEDED";
+            } else {
+                return "TEST FAILED";
+            }
+        }
+    </script>
+</body>
+
+</html
