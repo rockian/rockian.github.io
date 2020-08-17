@@ -1,7 +1,11 @@
 setInterval(function() { grow(); }, 250);
 
 function grow() {
-    $('#circle').css('height', '10px');
-    $('#circle').css('width', '10px');
+    let width = parseInt($('#circle').css('width')) + 10;
+    let height = parseInt($('#circle').css('height'));
+    $('#circle').css('height', width + 'px');
+    $('#circle').css('width', height + 'px');
 }
-$('#circle').click().css('display: none');
+$('#circle').click(function() {
+    $(this).css('display', 'none');
+});
